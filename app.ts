@@ -1,5 +1,4 @@
-
-import "https://deno.land/x/dotenv/load.ts";
+import "https://deno.land/x/dotenv/load.ts"; // Import environment variables
 
 import {
     Client,
@@ -13,11 +12,13 @@ import {
     command,
     CommandContext,
     GatewayIntents
-  } from 'https://deno.land/x/harmony/mod.ts'
+  } from 'https://deno.land/x/harmony/mod.ts'   // Import Harmony Modules
 
   import { commands } from "./commands.ts"
-  
+  import "./db.ts"
+  // Open a database
 
+  const dbController = new DBController(); 
   class EventBot extends CommandClient {
     constructor() {
       super({
